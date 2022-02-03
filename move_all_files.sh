@@ -11,7 +11,7 @@ namespaces[0]="testing"
 
 
 
-path_namespace_folder="/home/ahmed/Maxab/project_move_env_script/testBash"
+path_namespace_folder="/##path##/testBash"
   sudo mkdir $path_namespace_folder;
 
 

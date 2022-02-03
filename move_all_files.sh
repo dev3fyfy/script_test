@@ -12,7 +12,7 @@ namespaces[0]="testing"
 
 
 path_namespace_folder="/##path##/testBash"
-  sudo mkdir $path_namespace_folder;
+   mkdir $path_namespace_folder;
 
 
 

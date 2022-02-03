@@ -23,9 +23,9 @@ for key in ${namespaces[@]}; do
 for item in $(kubectl get -n $key -o=name pvc,configmap,serviceaccount,secret,ingress,service,deployment,job,cronjob)
 do
 echo $item
-  sudo  mkdir -p $path_namespace_folder/$key/$(dirname $item)
-  sudo touch $path_namespace_folder/$key/$item.yaml
-  sudo chmod 777 $path_namespace_folder/$key/$item.yaml
+    mkdir -p $path_namespace_folder/$key/$(dirname $item)
+   touch $path_namespace_folder/$key/$item.yaml
+   chmod 777 $path_namespace_folder/$key/$item.yaml
     kubectl get -n $key -o=yaml  $item >  $path_namespace_folder/$key/$item.yaml
 
 done

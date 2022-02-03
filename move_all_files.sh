@@ -11,8 +11,8 @@ namespaces[0]="testing"
 
 
 
-path_namespace_folder="/##path##/testBash"
-   mkdir $path_namespace_folder;
+path_namespace_folder="/home/ahmed/Maxab/project_move_env_script/testBash"
+  sudo mkdir $path_namespace_folder;
 
 
 
@@ -23,9 +23,9 @@ for key in ${namespaces[@]}; do
 for item in $(kubectl get -n $key -o=name pvc,configmap,serviceaccount,secret,ingress,service,deployment,job,cronjob)
 do
 echo $item
-    mkdir -p $path_namespace_folder/$key/$(dirname $item)
-   touch $path_namespace_folder/$key/$item.yaml
-   chmod 777 $path_namespace_folder/$key/$item.yaml
+  sudo  mkdir -p $path_namespace_folder/$key/$(dirname $item)
+  sudo touch $path_namespace_folder/$key/$item.yaml
+  sudo chmod 777 $path_namespace_folder/$key/$item.yaml
     kubectl get -n $key -o=yaml  $item >  $path_namespace_folder/$key/$item.yaml
 
 done

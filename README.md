@@ -12,16 +12,16 @@ create folder to environment files
    - namespaces folder contain deployment_files folder , svc_files folder , cm_files folder , ing_files folder , tls_files folder , 
 
    Ex :
-    - Staging 
-      - first_namespace
-        - deployment_files
-        - svc_files
-        -  cm_files
-        - ...
-      - second_namespace
-        - ...
-      - third_namespace
-        - ...
+    1. Staging 
+       - first_namespace
+         - deployment_files
+         - svc_files
+         -  cm_files
+         - ...
+       - second_namespace
+         - ...
+       - third_namespace
+         - ...
 
 
 Details of Algorithm scripting

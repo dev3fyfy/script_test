@@ -1,13 +1,19 @@
 
 
 #filter tls-secret and create tls certification(crt , key)
+declare -A namespaces
+declare -A path_namespace_folder
+
+
+namespaces[0]="testing"
+
 for key in ${namespaces[@]}; do
 
 for item in $(kubectl get ing -n $key -o=name )
 do
 echo $item
 
-all_hosts= kg ing example-ingress -o custom-columns=HOSTS:.spec.tls
+all_hosts= kubectl get ing example-ingress -o custom-columns=HOSTS:.spec.tls
 
 # split space host and tls name
 arr=($all_hosts)
@@ -26,7 +32,5 @@ done
 
   
 
-    # mkdir -p /home/ahmed/Maxab/project_move_env_script/testBash/$key/$(dirname $item)
-    # kubectl get -n $key -o=yaml  $item > /home/ahmed/Maxab/project_move_env_script/testBash/$key/$item.yaml
 done
 done
